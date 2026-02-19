@@ -29,7 +29,10 @@ connectDB();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+   origin: "https://tiny-mochi-77d63b.netlify.app/",
+   credentials: true
+ }));
 app.use(express.json()); // Parse JSON request body
 
 // Routes

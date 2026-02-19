@@ -30,8 +30,14 @@ const app = express();
 
 // Middleware
 app.use(cors({
-   origin: "*"
- }));
+   origin: [
+     "https://tiny-mochi-77d63b.netlify.app",
+     "http://localhost:4200"
+   ],
+   methods: ["GET", "POST", "PUT", "DELETE"],
+   allowedHeaders: ["Content-Type", "Authorization"]
+}));
+app.options("*", cors());
 app.use(express.json()); // Parse JSON request body
 
 // Routes

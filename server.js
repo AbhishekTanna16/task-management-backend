@@ -30,8 +30,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-   origin: "https://tiny-mochi-77d63b.netlify.app/",
-   credentials: true
+   origin: "*"
  }));
 app.use(express.json()); // Parse JSON request body
 
